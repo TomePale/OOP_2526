@@ -1,2 +1,2 @@
-# Objektno-orijentirano programiranje - Java
+# Objektno-orijentirano programiranje - Java ☕️
 
