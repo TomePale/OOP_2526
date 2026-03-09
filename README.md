@@ -1,2 +1,2 @@
-# OOP_2526
-Objektno-orijentirano programiranje - Java
+# Objektno-orijentirano programiranje - Java
+
