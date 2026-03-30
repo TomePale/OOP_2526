@@ -1,0 +1,50 @@
+package inner_cls_pckg;
+
+public class CLSWithLocal {
+
+    public void processStringDData(String[] data) {
+
+        class StringDataParser {
+            private int validNumInstances;
+            private int invalidNumInstances;
+
+            boolean isValid(String dataElement) {
+               return dataElement != null && dataElement.contains(";") && dataElement.split(";").length == 3;
+           }
+
+           String[] parseElements(String toParse) {
+                return toParse.split(";");
+           }
+
+           void processData(String dataElement) {
+                if(isValid(dataElement)) {
+                    String[] elements = parseElements(dataElement);
+                    printElements(elements);
+                    validNumInstances++;
+               } else {
+                    System.out.println(dataElement + " is not valid for parsing and processing!");
+                    invalidNumInstances++;
+                }
+           }
+
+           void giveReport() {
+                System.out.println("Number of valid instances: " + validNumInstances);
+                System.out.println("Number of invalid instances: " + invalidNumInstances);
+
+           }
+
+           void printElements(String[] elements) {
+                for(String el : elements) {
+                    System.out.println(el);
+                }
+                System.out.println("==========");
+           }
+        }
+
+        StringDataParser stringDataParser = new StringDataParser();
+        for(String dataElement : data) {
+            stringDataParser.processData(dataElement);
+        }
+        stringDataParser.giveReport();
+    }
+}
